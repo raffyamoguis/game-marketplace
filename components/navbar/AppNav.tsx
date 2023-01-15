@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Navbar, NavLink, Text } from '@mantine/core';
+import React from 'react';
+import { Navbar, NavLink } from '@mantine/core';
+import Link from 'next/link';
 import {
   IconGauge,
   IconBrandStrava,
@@ -12,17 +13,17 @@ interface AppNavProps {
 }
 
 const data = [
-  { icon: IconGauge, label: 'Home' },
-  { icon: IconBuildingStore, label: 'Merchant' },
+  { icon: IconGauge, label: 'Home', link: '/' },
+  { icon: IconBuildingStore, label: 'Merchant', link: '/merchant' },
   {
     icon: IconBrandStrava,
     label: 'Transactions',
+    link: '/transactions',
   },
-  { icon: IconSettings, label: 'Settings' },
+  { icon: IconSettings, label: 'Settings', link: '/settings' },
 ];
 
 const AppNav: React.FC<AppNavProps> = ({ opened }) => {
-  const [active, setActive] = useState(0);
   return (
     <Navbar
       p='md'
@@ -33,10 +34,10 @@ const AppNav: React.FC<AppNavProps> = ({ opened }) => {
       {data.map((item, index) => (
         <NavLink
           key={item.label}
-          active={index === active}
+          component={Link}
+          href={item.link}
           label={item.label}
           icon={<item.icon size={16} stroke={1.5} />}
-          onClick={() => setActive(index)}
         />
       ))}
     </Navbar>

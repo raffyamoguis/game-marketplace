@@ -8,6 +8,12 @@ import {
 } from '@tabler/icons';
 import logo from '../../assets/images/logo-no-background.png';
 
+const headerIcons = [
+  { icon: IconBell },
+  { icon: IconMessage2 },
+  { icon: IconMoonStars },
+];
+
 const AppHeader: React.FC = () => {
   return (
     <Group position='apart' style={{ height: '100%', alignItems: 'center' }}>
@@ -29,21 +35,11 @@ const AppHeader: React.FC = () => {
 
       <Group>
         <Text>Account Type</Text>
-        <Anchor>
-          <ActionIcon radius='xl' variant='transparent'>
-            <IconBell />
-          </ActionIcon>
-        </Anchor>
-        <Anchor>
-          <ActionIcon radius='xl' variant='transparent'>
-            <IconMessage2 />
-          </ActionIcon>
-        </Anchor>
-        <Anchor>
-          <ActionIcon radius='xl' variant='transparent'>
-            <IconMoonStars />
-          </ActionIcon>
-        </Anchor>
+        {headerIcons.map((header: any, idx) => (
+          <Anchor key={idx}>
+            <ActionIcon>{<header.icon />}</ActionIcon>
+          </Anchor>
+        ))}
       </Group>
     </Group>
   );
