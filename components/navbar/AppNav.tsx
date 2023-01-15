@@ -31,7 +31,7 @@ const AppNav: React.FC<AppNavProps> = ({ opened }) => {
       hidden={!opened}
       width={{ sm: 200, lg: 300 }}
     >
-      {data.map((item, index) => (
+      {data.map((item) => (
         <NavLink
           key={item.label}
           component={Link}

@@ -7,6 +7,8 @@ import {
   IconMoonStars,
 } from '@tabler/icons';
 import logo from '../../assets/images/logo-no-background.png';
+import appHeaderstyle from './appheader.module.css';
+import { useDeviceSize, isDeviceMD } from '../../hooks/useDeviceSize';
 
 const headerIcons = [
   { icon: IconBell },
@@ -15,6 +17,7 @@ const headerIcons = [
 ];
 
 const AppHeader: React.FC = () => {
+  const [width] = useDeviceSize();
   return (
     <Group position='apart' style={{ height: '100%', alignItems: 'center' }}>
       <Image
@@ -26,10 +29,10 @@ const AppHeader: React.FC = () => {
       />
 
       <Input
-        style={{ width: '500px' }}
+        className={appHeaderstyle.searchInput}
         icon={<IconSearch size={20} />}
         placeholder='Search..'
-        size='md'
+        size={isDeviceMD(width) ? 'xs' : 'md'}
         radius='xl'
       />
 
@@ -37,7 +40,9 @@ const AppHeader: React.FC = () => {
         <Text>Account Type</Text>
         {headerIcons.map((header: any, idx) => (
           <Anchor key={idx}>
-            <ActionIcon>{<header.icon />}</ActionIcon>
+            <ActionIcon>
+              {<header.icon size={isDeviceMD(width) ? 18 : null} />}
+            </ActionIcon>
           </Anchor>
         ))}
       </Group>

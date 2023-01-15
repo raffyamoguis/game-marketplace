@@ -18,6 +18,7 @@ type Props = {
 const Layout: React.FC<Props> = ({ children }) => {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
+
   return (
     <>
       <AppShell
@@ -34,7 +35,7 @@ const Layout: React.FC<Props> = ({ children }) => {
         navbar={<AppNav opened={opened} />}
         aside={<AppSideNav />}
         header={
-          <Header height={{ base: 50, md: 70 }} p='md'>
+          <Header height={{ base: 50, md: 70, sm: 50 }} p='md'>
             {/* <div
               style={{ display: 'flex', alignItems: 'center', height: '100%' }}
             > */}
