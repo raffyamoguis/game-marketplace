@@ -1,0 +1,9 @@
+@media only screen and (max-width: 1000px) {
+  .searchInput {
+    width: 300px !important;
+  }
+}
+
+.searchInput {
+  width: 500px;
+}

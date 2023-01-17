@@ -20,8 +20,8 @@ export default function App(props: AppProps) {
         withNormalizeCSS
         theme={{
           /** Put your mantine theme override here */
-          fontFamily: 'Varela Round, sans-serif',
           colorScheme: 'light',
+          fontFamily: 'Varela Round, sans-serif',
           headings: { fontFamily: 'Varela Round, sans-serif' },
         }}
       >
