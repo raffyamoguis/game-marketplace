@@ -9,7 +9,7 @@ type Props = {
 const Layout: React.FC<Props> = ({ children }) => {
   return (
     <AppShell
-      padding='md'
+      padding='xs'
       header={
         <Header height={60} p='xs'>
           <AppHeader />
