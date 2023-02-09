@@ -9,8 +9,9 @@
   An online marketplace to buy, sell, and trade your game accounts.
 </p>
 
-<h2>Screenshots</h2>
-![image](https://user-images.githubusercontent.com/86818651/217780174-35ecd017-000b-40df-98b0-3850976499e7.png)
+This web application is in development it may or may not be deployed. Plans for this project is ongoing it may change.
+
+[Dev Preview](https://game-marketplace-git-dev-raffyamoguis.vercel.app/)
 
 
 <!--
