@@ -21,8 +21,8 @@ export default function App(props: AppProps) {
         theme={{
           /** Put your mantine theme override here */
           colorScheme: 'light',
-          fontFamily: 'Varela Round, sans-serif',
-          headings: { fontFamily: 'Varela Round, sans-serif' },
+          fontFamily: 'IBM Plex Sans, sans-serif',
+          headings: { fontFamily: 'IBM Plex Sans, sans-serif' },
         }}
       >
         <Component {...pageProps} />
