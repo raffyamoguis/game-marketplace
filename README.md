@@ -9,6 +9,10 @@
   An online marketplace to buy, sell, and trade your game accounts.
 </p>
 
+<h2>Screenshots</h2>
+![image](https://user-images.githubusercontent.com/86818651/217780174-35ecd017-000b-40df-98b0-3850976499e7.png)
+
+
 <!--
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
