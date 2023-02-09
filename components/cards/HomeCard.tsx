@@ -20,6 +20,11 @@ import {
   IconShoppingCart,
   IconCirclePlus,
 } from '@tabler/icons';
+import {
+  useDeviceSize,
+  isDeviceSM,
+  isDeviceXS,
+} from '../../hooks/useDeviceSize';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
@@ -43,6 +48,18 @@ const imagesData = [
 ];
 
 const HomeCard = () => {
+  const [width] = useDeviceSize();
+
+  const checkDeviceVP = () => {
+    if (isDeviceXS(width)) {
+      return 1;
+    }
+    if (isDeviceSM(width)) {
+      return 2;
+    }
+    return 3;
+  };
+
   return (
     <Card shadow='sm' p='lg' radius='md' withBorder mt={20}>
       <Card.Section withBorder inheritPadding py='sm'>
@@ -84,10 +101,9 @@ const HomeCard = () => {
       </Text>
 
       <PhotoProvider>
-        {/* <Flex> */}
-        <SimpleGrid cols={3} spacing={4}>
-          {imagesData.map((image) => (
-            <PhotoView key={image.label} src={image.src}>
+        <SimpleGrid cols={checkDeviceVP()} spacing={4}>
+          {imagesData.map((image: any, index: number) => (
+            <PhotoView key={index} src={image.src}>
               <Image
                 src={image.src}
                 alt={image.label}
@@ -98,23 +114,6 @@ const HomeCard = () => {
           ))}
         </SimpleGrid>
       </PhotoProvider>
-
-      {/* <PhotoProvider>
-        <PhotoView src='https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80'>
-          <Image
-            src='https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80'
-            height={160}
-            alt='Norway'
-          />
-        </PhotoView>
-        <PhotoView src='https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80'>
-          <Image
-            src='https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80'
-            height={160}
-            alt='Norway'
-          />
-        </PhotoView>
-      </PhotoProvider> */}
 
       <Group position='apart' mt={30}>
         <ActionIcon>
