@@ -1,3 +1,13 @@
+<p align="center">
+    <img alt="Consumet" src="https://github.com/raffyamoguis/game-marketplace/blob/main/assets/images/logo.png" width="150">
+</p>
+
+<h1 align="center">
+  Game Account Marketplace
+</h1>
+<p align="center">
+  An online marketplace to buy, sell, and trade your game accounts.
+</p>
 
 <!--
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
